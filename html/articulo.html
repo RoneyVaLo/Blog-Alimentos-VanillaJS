@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulo</title>
+    <script src="../js/validate.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+
+<body>
+    <header>
+        <section class="banner" id="banner">
+            <div class="banner__info">
+                <h2 class="banner__title" id="banner__title">
+                    Titulo Articulo
+                </h2>
+            </div>
+        </section>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav__menu-horizontal">
+            <li>
+                <a href="./index.html">Inicio</a>
+            </li>
+            <li>                
+                <input type="checkbox" name="categories" id="categories">
+                <label for="categories" class="lbl-categories">Categorias</label>
+                
+                <ul class="nav__menu-vertical" id="menu-vertical">
+                    <li>
+                        <a href="./categoria.html">Desayuno</a>
+                    </li>
+                    <li>
+                        <a href="./categoria.html">Almuerzo</a>
+                    </li>
+                    <li>
+                        <a href="./categoria.html">Cena</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="./sobre-nosotros.html" id="sobre-nosotros">Nosotros</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="contenedor-main">
+
+        <div class="element__modification">
+            <a href="./login.html" class="logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+
+            <div class="theme">
+                <button class="switch" id="switch">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button>
+    
+                
+            </div>
+        </div>
+    </section>
+
+    <main class="contenido">
+    </main>
+</body>
+<script src="../js/theme.js"></script>
+<script src="../js/article.js"></script>
+<script src="../js/categorie.js"></script>
+
+</html>

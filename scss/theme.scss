@@ -1,0 +1,156 @@
+@import './mixins/media-queries.scss';
+
+
+/*? -----------SWITCH----------*/
+.theme {
+    margin: 8px 4px 0;
+}
+
+.switch {
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+
+    span {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display: block;
+        background: none;
+        color: var(--color-sass--white);
+
+        @include respond-to($tablet) {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        @include respond-to($laptop) {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+
+        @include respond-to($tablet) {
+            width: 24px;
+            height: 24px;
+        }
+
+        @include respond-to($laptop) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &.active {
+        background: #ffa500;
+        color: var(--color-sass--black);
+
+        &::after {
+            right: 0;
+            left: unset;
+        }
+    }
+}
+
+/** ----------ARTICULOS----------- */
+body, main, .article {
+    *background: #f1f1f1;
+    
+    // Esto es necesario para que no se vea brusco el cambio
+    transition: .5s ease all;
+
+    &.dark {
+        background: var(--color-sass--black);
+        color: var(--color-sass--white);
+
+        main {
+            background: #0f0f0f;
+        }
+
+        .title_post {
+            color: #0a4e8d;
+        }
+
+        .article {
+            
+            box-shadow: 0px 11px 8px 0px rgba(102, 102, 102, 0.75);
+            &__title {
+                color: #2121e9;
+            }
+        }
+
+        .logout {
+            color: var(--color-sass--white);
+
+            &:hover {
+                box-shadow: 10px 10px 10px 0px rgba(27, 27, 27, 0.749);
+            }
+        }
+
+        #buscador {
+            background: var(--color-sass--black);
+            color: var(--color-sass--white);
+            border-color: #858896;
+        }
+
+        #buscar {
+            color: var(--color-sass--white);
+
+            &:active {
+                box-shadow: 0px 0px 20px 2px rgba(212, 212, 212, 0.2);
+            }
+        }
+
+        .profile {
+            color: var(--color-sass--black)
+        }
+    }
+}
+
+/** ----------OTROS ELEMENTOS QUE INTERACTUAN CON EL TEMA----------- */
+.element__modification {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logout {
+    text-decoration: none;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 0 20px;
+    color: var(--color-sass--black);
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: #e60000;
+        color: var(--color-sass--white);
+        border-radius: 3%;
+        box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+}

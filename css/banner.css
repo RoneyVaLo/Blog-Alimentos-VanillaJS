@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+
+header {
+  width: 100%; }
+
+.banner {
+  background: url("../img/banner.jpg") center/cover;
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
+  .banner::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #38D996;
+    opacity: 0.5; }
+  .banner__info {
+    padding: 0.3em;
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    color: #fff;
+    text-align: center;
+    margin: auto; }
+  .banner__title {
+    line-height: 1.5;
+    font-size: 1.5em;
+    font-family: sans-serif; }
+  .banner__p {
+    line-height: 2;
+    font-size: 1em;
+    font-family: sans-serif; }
+  @media (min-width: 481px) {
+    .banner {
+      height: 180px; }
+      .banner__title {
+        font-size: 1.8em; }
+      .banner__p {
+        font-size: 1.2em; } }
+  @media (min-width: 769px) {
+    .banner {
+      height: 300px; }
+      .banner__title {
+        font-size: 2.5em; }
+      .banner__p {
+        font-size: 1.5em; } }
+  @media (min-width: 1024px) {
+    .banner {
+      height: 400px; }
+      .banner__info {
+        max-width: 700px; }
+      .banner__title {
+        font-size: 2.8em; }
+      .banner__p {
+        font-size: 2em; } }

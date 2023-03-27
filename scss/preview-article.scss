@@ -1,0 +1,160 @@
+@import './mixins/media-queries.scss';
+
+main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Courier, monospace;
+
+    background-color: #f0f0f0;
+    padding: 14px 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.error {
+    width: 100%;
+    height: 50vh;
+    font-size: 3em;
+    font-weight: bold;
+    color: #e40202;
+    align-items: center;
+    text-align: center;
+
+    img {
+        width: auto;
+    }
+}
+
+.checked {
+    color: #ff7a00;
+}
+
+.article {
+    /*text-align: center;*/
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0px 11px 8px 0px rgba(0,0,0,0.75);
+
+    &__title {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: #080879;
+    }
+    
+    &__title:hover {
+        background-color: #CCC;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    }
+    
+    &__author {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 25px;
+    }
+    
+    &__date {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    
+    &__rating {
+        margin-top: 10px;
+        display: inline-block;
+        color: #444;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+    }
+    
+    &__description {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    /*Responsive*/
+
+    @include respond-to($tablet) {
+        
+        margin: 26px auto;
+
+        main {
+            margin-top: 26px;
+        }
+    
+        &__title {
+            font-size: 2rem;
+        }
+    
+        &__author {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    
+        &__date {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    
+        &__rating {
+            margin-top: 14px;
+            font-size: 1.8rem;
+        }
+    
+        &__description {
+            font-size: 18px;
+        }
+    }
+
+    @include respond-to($laptop) {
+        main {
+            margin-top: 36px;
+        }
+    
+        &__title {
+            font-size: 2.25rem;
+        }
+    
+        &__author {
+            font-size: 28px;
+        }
+    
+        &__date {
+            font-size: 24px;
+        }
+    
+        &__rating {
+            font-size: 2rem;
+        }
+    
+        &__description {
+            font-size: 20px;
+        }
+    }
+
+    @include respond-to($desktop) {
+        padding: 50px;
+    
+        &__title {
+            font-size: 2.5rem;
+        }
+    
+        &__author {
+            font-size: 30px;
+        }
+    
+        &__date {
+            font-size: 28px;
+        }
+    
+        &__rating {
+            font-size: 2.4rem;
+        }
+    
+        &__description {
+            font-size: 22px;
+        }
+    }
+}
+

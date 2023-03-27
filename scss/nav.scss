@@ -1,0 +1,154 @@
+@import './mixins/media-queries.scss';
+
+body>nav {
+    top: 1px;
+    position: sticky;
+}
+
+.nav {
+    margin: auto;
+    background-color: #333;
+    font-size: 14px;
+    margin-top: 10px;
+    height: 34px;
+    width: 100%;
+    z-index: 1000;
+
+    /*Estilos del menu*/
+
+
+    #categories {
+        display: none;
+    }
+
+    .lbl-categories {
+        margin-top: 10px;
+        display: inline-block;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+
+    &__menu-horizontal {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    &__menu-horizontal>li>a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__menu-horizontal>li:active {
+        background-color: #38D996;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    }
+
+    &__menu-vertical {
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 120px;
+        background-color: rgba(0, 0, 0, .5);
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    #categories:checked~&__menu-vertical {
+        display: block;
+    }
+
+    &__menu-vertical li:active {
+        background-color: #ff5b1a;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        z-index: 10;
+    }
+
+    &__menu-vertical li a {
+        display: block;
+        color: white;
+        padding: 15px 15px 15px 20px;
+        text-decoration: none;
+    }
+
+    /*Responsive*/
+
+    @include respond-to($tablet) {
+        font-size: 20px;
+        margin-top: 30px;
+        height: 50px;
+
+        .lbl-categories {
+            font-size: 20px;
+        }
+    
+        &__menu-vertical {
+            width: 156px;
+            font-size: 18px;
+            margin-top: 18px;
+        }
+    }
+
+    @include respond-to($laptop) {
+        font-size: 22px;
+        margin-top: 34px;
+        height: 60px;
+    
+        /*Menu Style*/
+        #sobre-nosotros::before {
+            content: "Sobre ";
+        }
+    
+        .lbl-categories {
+            font-size: 22px;
+        }
+    
+        &__menu-vertical {
+            width: 164px;
+            font-size: 20px;
+            margin-top: 18px;
+        }
+    }
+
+    @include respond-to($desktop) {
+        font-size: 26px;
+        height: 70px;
+    
+        .lbl-categories {
+            font-size: 26px;
+            margin: 5px 0;
+        }
+    
+        &__menu-horizontal>li>a,
+        .lbl-categories {
+            padding: 15px 20px;
+        }
+    
+        &__menu-horizontal>li:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+            border-radius: 5%;
+            background-color: #38D996;
+        }
+    
+        &__menu-vertical {
+            width: 200px;
+            font-size: 24px;
+        }
+    
+        &__menu-vertical li:hover {
+            transform: scale(1.1);
+            background-color: #FF5B1A;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+            z-index: 10;
+        }
+    }
+}

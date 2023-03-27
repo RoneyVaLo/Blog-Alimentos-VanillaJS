@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="../js/validate.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+
+<body>
+    <header>
+        <section class="banner">
+            <div class="banner__info">
+                <h1 class="banner__title">
+                    DIARIO DE ALIMENTOS
+                </h1>
+                <p class="banner__p">
+                    Aquí se podran encontrar articulos que hablan acerca de tipos de alimentos
+                </p>
+            </div>
+        </section>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav__menu-horizontal">
+            <li>
+                <a href="">Inicio</a>
+            </li>
+            <li>                
+                <input type="checkbox" name="categories" id="categories">
+                <label for="categories" class="lbl-categories">Categorias</label>
+                
+                <ul class="nav__menu-vertical" id="menu-vertical">
+                    <li>
+                        <a href="./categoria.html" id="desayuno" class="categoria">Desayuno</a>
+                    </li>
+                    <li>
+                        <a href="./categoria.html" id="almuerzo" class="categoria">Almuerzo</a>
+                    </li>
+                    <li>
+                        <a href="./categoria.html" id="cena" class="categoria">Cena</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="sobre-nosotros.html" id="sobre-nosotros">Nosotros</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="contenedor-main">
+
+        <div class="search">
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar..." autocomplete="off">
+                <button id="buscar">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </button>
+        </div>
+
+        <div class="element__modification">
+            <a href="./login.html" class="logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+
+            <div class="theme">
+                <button class="switch" id="switch">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button>
+    
+                
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+        <div id= 'error' class="filtro error">
+            NO HAY RESULTADO CON SU BUSQUEDA!!!
+            INTENTELO NUEVAMENTE
+        </div>
+
+    </main>
+</body>
+
+<script src="../js/articles-home.js"></script>
+<script src="../js/categorie.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/theme.js"></script>
+</html>

@@ -1,0 +1,96 @@
+@import './mixins/media-queries.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    width: 100%;
+}
+
+.banner {
+    background: url("../img/banner.jpg") center/cover;
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+
+    &::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #38D996;
+        opacity: 0.5;
+    }
+
+    &__info {
+        padding: 0.3em;
+        position: absolute;
+        width: 100%;
+        max-width: 400px;
+        color: #fff;
+        text-align: center;
+        margin: auto;
+    }
+
+    &__title {
+        line-height: 1.5;
+        font-size: 1.5em;
+        font-family: sans-serif;
+    }
+
+    &__p {
+        line-height: 2;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+    @include respond-to($tablet)
+    {
+        height: 180px;
+    
+        &__title {
+            font-size: 1.8em;
+        }
+    
+        &__p {
+            font-size: 1.2em;
+        }
+    }
+
+    @include respond-to($laptop)
+    {
+        height: 300px;
+    
+        &__title {
+            font-size: 2.5em;
+        }
+    
+        &__p {
+            font-size: 1.5em;
+        }
+    }
+
+    @include respond-to($desktop){
+        height: 400px;
+    
+        &__info {
+            max-width: 700px;
+        }
+    
+        &__title {
+            font-size: 2.8em;
+        }
+    
+        &__p {
+            font-size: 2em;
+        }
+    }
+}

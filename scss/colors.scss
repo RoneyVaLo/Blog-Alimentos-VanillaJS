@@ -1,0 +1,7 @@
+@import './variables/colors.scss';
+
+:root {
+    --color-sass--subtitle-article: #{$color--subtitle};
+    --color-sass--black: #{$color--black};
+    --color-sass--white: #{$color--white};
+}
